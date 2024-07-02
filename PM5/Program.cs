@@ -23,9 +23,13 @@ class Program
         Byte[] b = new Byte[20] {0x20,0xbf,0x2,255,0,3,0,5,0,6,0,7,0,8,0,0,9,0,0,10};
         //rnd.NextBytes(b);
         RowData2 rd = new(b);
-        Console.WriteLine(TimeSpan.FromSeconds(rd.elapsedTime * .01f).ToString(""));
-        Console.WriteLine(TimeSpan.FromSeconds(rd.lastSplitTime * 0.01f));
+        Console.WriteLine(HelperFunctions.IntToTimeSpan(rd.elapsedTime));
+    
+        b = new Byte[17] {0xff,0xbf,0xf2,255,255,200,0,5,0,6,0,7,0,8,0,0,9};
+        AdditionalData ad = new(b);
+        Console.WriteLine(ad);
     }
+
         /*
         // Query for extra properties you want returned
         string[] requestedProperties = { "System.Devices.Aep.DeviceAddress", "System.Devices.Aep.IsConnected" };
