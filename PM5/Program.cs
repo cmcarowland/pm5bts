@@ -28,6 +28,10 @@ class Program
         b = new Byte[17] {0xff,0xbf,0xf2,255,255,200,0,5,0,6,0,7,0,8,0,0,9};
         AdditionalData ad = new(b);
         Console.WriteLine(ad);
+        
+        b = new Byte[19] {0,0,0,255,255,255,(byte)WorkoutType.FIXEDDIST_INTERVAL,0,0,0,0,0,0,0,0,0,0,0,255};
+        RowGeneral rg = new(b);
+        Console.WriteLine(rg);
     }
 
         /*
