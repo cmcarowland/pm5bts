@@ -7,7 +7,7 @@ namespace PM5
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct RowData2
     {
-        static readonly string ID = "0033";
+        static public readonly string ID = "0033";
         // Elapsed Time
         public uint elapsedTime;
 
@@ -81,15 +81,15 @@ namespace PM5
     
         public override string ToString()
         {
-            return $"{elapsedTime:X2} " +
+            return $"{HelperFunctions.IntToTimeSpan(elapsedTime)} " +
                 $"{intervalCount:X2} " +
                 $"{avgPower:X2} " +
                 $"{totalCalories:X2} " +
-                $"{splitAvgPace:X2} " +
+                $"{HelperFunctions.IntToTimeSpan(splitAvgPace)} " +
                 $"{splitAvgPower:X2} " +
                 $"{splitAvgCalories:X2} " +
-                $"{lastSplitTime:X2} " +
-                $"{lastSplitDistance:X2}";
+                $"{HelperFunctions.IntToTimeSpan(lastSplitTime)} " +
+                $"{lastSplitDistance}";
         }
     }
 }
