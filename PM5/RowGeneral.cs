@@ -7,7 +7,7 @@ namespace PM5
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct RowGeneral
     {
-        static readonly string ID = "0031";
+        static public readonly string ID = "0031";
 
         public uint elapsedTime; // Elapsed Time Lo (0.01 sec lsb)
         public uint distance; // Distance Lo (0.1 m lsb)

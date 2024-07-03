@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace PM5
 {
@@ -33,7 +35,7 @@ namespace PM5
 
         public static float DistToFloat(uint data)
         {
-            return data * 0.01f;
+            return data * 0.1f;
         }
     }
 }

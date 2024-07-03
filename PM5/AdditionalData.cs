@@ -6,7 +6,7 @@ namespace PM5
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct AdditionalData
     {
-        static readonly string ID = "0032";
+        static public readonly string ID = "0032";
         // Elapsed Time
         public uint elapsedTime;         // Elapsed Time Lo (0.01 sec lsb)
     
@@ -53,8 +53,8 @@ namespace PM5
             if (byteArray == null)
                 throw new ArgumentNullException(nameof(byteArray));
 
-            if (byteArray.Length != 17)
-                throw new ArgumentException("Byte array length must be 17 bytes.");
+            // if (byteArray.Length != 17)
+            //     throw new ArgumentException($"Byte array length must be 17 bytes. {byteArray.Length}");
 
             int offset = 0;
 
@@ -87,7 +87,7 @@ namespace PM5
             restTime = HelperFunctions.ThreeByteToInt(byteArray, ref offset);
             
             // Erg Machine Type (1 * 2 bytes)
-            ergMachineType = byteArray[offset];
+            ergMachineType = 0;//byteArray[offset];
         }
     }
 }
