@@ -30,5 +30,10 @@ namespace PM5
         {
             return data * 0.001f;
         }
+
+        public static float DistToFloat(uint data)
+        {
+            return data * 0.01f;
+        }
     }
 }
