@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace PM5
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    struct AdditionalData
+    public struct AdditionalData
     {
         static public readonly string ID = "0032";
         // Elapsed Time
@@ -86,7 +86,7 @@ namespace PM5
             // Rest Time (3 bytes)
             restTime = HelperFunctions.ThreeByteToInt(byteArray, ref offset);
             
-            // Erg Machine Type (1 * 2 bytes)
+            // Erg Machine Type (1 byte)
             ergMachineType = 0;//byteArray[offset];
         }
     }

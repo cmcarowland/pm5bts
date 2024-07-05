@@ -5,7 +5,7 @@ using System.Linq;
 namespace PM5
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    struct RowData2
+    public struct RowData2
     {
         static public readonly string ID = "0033";
         // Elapsed Time

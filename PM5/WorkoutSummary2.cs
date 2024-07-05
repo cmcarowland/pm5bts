@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 namespace PM5
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    struct WorkoutSummary2
+    public struct WorkoutSummary2
     {
         static readonly string ID = "003A";
         public ushort date;
