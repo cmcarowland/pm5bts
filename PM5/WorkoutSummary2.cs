@@ -7,7 +7,7 @@ namespace PM5
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct WorkoutSummary2
     {
-        static readonly string ID = "003A";
+        static public readonly string ID = "003A";
         public ushort date;
         public ushort time;
         public byte splitType;
@@ -17,7 +17,7 @@ namespace PM5
         public ushort watts;
         public uint restDistance;
         public ushort restTime;
-        public ushort avgCalories;
+        public ushort avgCalories; // cal/hr
 
         public WorkoutSummary2(byte[] byteArray)
         {
