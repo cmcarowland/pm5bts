@@ -74,5 +74,30 @@ namespace PM5
 		RECOVERY_STATE = 4
     }
 
-
+	public enum ErgMachineType : byte
+	{
+		StaticD = 0,
+		StaticC = 1,
+		StaticA = 2,
+		StaticB = 3,
+		StaticE = 5,
+		StaticSimulator = 7,
+		StaticDynamic = 8,
+		SlidesA = 16,
+		SlidesB = 17,
+		SlidesC = 18,
+		SlidesD = 19,
+		SlidesE = 20,
+		LinkedDynamic = 32,
+		StaticDyno = 64,
+		StaticSki = 128,
+		StaticSkiSimulator = 143,
+		Bike = 192,
+		BikeArms = 193,
+		BikeSimulator = 207,
+		MultiErgRow = 224,
+		MultiErgSki = 225,
+		MultiErgBike = 226,
+		Num // Enum value to represent the number of elements (optional, typically not used in switch cases)
+	}
 }
