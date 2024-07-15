@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace PM5
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public struct AdditionalData
+    public struct AdditionalRow
     {
         static public readonly string ID = "0032";
         // Elapsed Time
@@ -32,7 +32,7 @@ namespace PM5
         public uint restTime;            // Rest Time Lo (0.01 sec lsb), CSAFE_PM_GET_RESTTIME
         
         // Erg Machine Type
-        public byte ergMachineType;        // Erg Machine Type 7
+        public ErgMachineType ergMachineType;        // Erg Machine Type 7
 
         public override string ToString()
         {
@@ -44,11 +44,11 @@ namespace PM5
                 $"{avgPace:X2} " +
                 $"{restDistance:X2} " +
                 $"{restTime:X4} " +
-                $"{ergMachineType:X1}";
+                $"{ergMachineType}";
         }
 
         // Constructor from byte array
-        public AdditionalData(byte[] byteArray)
+        public AdditionalRow(byte[] byteArray)
         {
             if (byteArray == null)
                 throw new ArgumentNullException(nameof(byteArray));
@@ -87,7 +87,7 @@ namespace PM5
             restTime = HelperFunctions.ThreeByteToInt(byteArray, ref offset);
             
             // Erg Machine Type (1 byte)
-            ergMachineType = 0;//byteArray[offset];
+            ergMachineType = 0;//(ErgMachineType)byteArray[offset];
         }
     }
 }
