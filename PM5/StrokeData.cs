@@ -11,9 +11,11 @@ namespace PM5
 
         // Define all data types according to the given ranges and requirements.
         public uint elapsedTime; // Lo (0.01 sec lsb)
+        
         public uint distance;
 
         public ushort driveLength; // (0.01 meters, max = 2.55m)
+
         public ushort driveTime; // (0.01 sec, max = 2.55 sec)
 
         public ushort strokeRecoveryTime; // Lo (0.01 sec, max = 655.35 sec)

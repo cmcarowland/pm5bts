@@ -27,6 +27,15 @@ namespace PM5
             
             return ts.ToString(@"mm\:ss\.f");
         }
+        
+        public static string IntToTimeSpanTenths(uint data)
+        {
+            var ts = TimeSpan.FromSeconds(data * 0.1f);
+            if(ts.TotalHours > 1)
+                return ts.ToString(@"hh\:mm\:ss\.f");
+            
+            return ts.ToString(@"mm\:ss\.f");
+        }
 
         public static float ShortToMetersPerSecond(ushort data)
         {
