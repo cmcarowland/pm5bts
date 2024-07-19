@@ -47,8 +47,11 @@ namespace PM5
         {
             return $"ET: {HelperFunctions.IntToTimeSpan(elapsedTime)} Distance: {HelperFunctions.DistToFloat(distance)} WorkoutType: {workoutType}\n" + 
                    $"IntType: {intervalType} WorkoutState: {workoutState} Rowing State: {rowingState}\n" +
-                   $"Stroke: {strokeState} TotalWorkDist: {totalWorkDistance} Workout Dur: {HelperFunctions.IntToTimeSpan(workoutDuration)}\n" +
-                   $"Workout Dur Type: {workoutDurationType} Drag Factor: {dragFactor}";
+                   $"Stroke: {strokeState} TotalWorkDist: {totalWorkDistance}\n" +
+                (workoutDurationType == WorkoutDurationType.DURATION_IDENTIFIER_TIME ? 
+                    $"Workout Time: {HelperFunctions.IntToTimeSpan(workoutDuration)}\n" :
+                    $"Workout Dist: {workoutDuration}\n") +
+                    $"Workout Dur Type: {workoutDurationType} Drag Factor: {dragFactor}";
         }
     }
 
